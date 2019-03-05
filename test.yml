@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: true
+  become_method: sudo
+  vars:
+    # Create file path
+    create_file_path: /tmp/file
+
+  tasks:
+    - name: Run arbitary command
+      command: "touch {{ create_file_path }}"
+      args:
+        creates: "{{ create_file_path }}"
+
+    - name: Create a file from a template
+      copy:
+        content: |
+          Generic
+          File
+          Content
+          {{ item }}
+        dest: "{{ item }}"
+      with_items:
+        - /tmp/file1
+        - /tmp/file2
