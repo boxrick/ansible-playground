@@ -8,6 +8,10 @@ This is a really simple example repo to get started with Ansible syntax and modu
 * Vagrant https://www.vagrantup.com/downloads.html
 * Docker https://www.docker.com/get-started
 
+### Modules reference
+
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
 ### Usage
 Some examples of usage:
 
